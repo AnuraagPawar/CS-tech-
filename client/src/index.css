@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f3ff;
+  --color-neon-purple: #bc13fe;
+  --color-deep-space: #05050a;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+
+  --font-display: "Orbitron", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-deep-space);
+    color: #e0e0e0;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: var(--color-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--color-glass-border);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  }
+
+  .btn-neon {
+    background: transparent;
+    border: 1px solid var(--color-neon-blue);
+    color: var(--color-neon-blue);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn-neon:hover {
+    background: var(--color-neon-blue);
+    color: var(--color-deep-space);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+  }
+
+  .input-tech {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .input-tech:focus {
+    border-color: var(--color-neon-blue);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    outline: none;
+  }
+}
